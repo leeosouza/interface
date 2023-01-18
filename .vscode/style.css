@@ -107,12 +107,15 @@ ul li a:hover {
   transform: translateY(-50%);
   top: 50%;
   z-index: 1;
+  animation: slide-back 0.3s forwards;
 }
 
 .light #switch button {
   right: 0px;
   left: initial;
+  animation: slide-in 0.5s forwards;
 }
+
 #switch span {
   display: block;
   width: 64px;
@@ -152,12 +155,31 @@ footer {
 }
 
 /* media queries */
-@media(min-width: 700px){
+@media (min-width: 700px) {
   :root {
     --bg-url: url(./asests/bg-desktop.jpg);
-
   }
-  .light{
+  .light {
     --bg-url: url(./asests/bg-desktop-light.jpg);
   }
-} 
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+    from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+
+}
